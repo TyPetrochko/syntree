@@ -437,7 +437,10 @@ function parse(str) {
 				start = i;
 			}
 			if ((temp == 2) && (level == 1)) {
-				while(i < str.length && str[i+1] != " " && str[i+1] != "]") i++;
+				while(i < str.length
+            && str[i+1] != " "
+            && str[i+1] != "]"
+            && str[i+1] != "-") i++;
 				n.children.push(parse(str.substring(start, i+1)));
 				start = i+1;
 			}
